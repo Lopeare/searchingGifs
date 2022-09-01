@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-// Este componente devuelve el valor valido a insertar al padre
+// This component returns the new value search to the father
 export const AddCategory = ({ onNewCategory }) => {
     const [inputValue, setInputValue] = useState('')
 
@@ -9,18 +9,12 @@ export const AddCategory = ({ onNewCategory }) => {
     }
 
     const onSubmit = (event) => {
-        // No recargar la página
+        // Prevent reload page
         event.preventDefault();
         const value = inputValue.trim();
-        // Búsqueda válida con 3 o más caracteres
-        // ó if( value.lenght > 3 ) return;
+
+        // Valid search with 3 or more characteres
         if (value.length >= 3) {
-            // Mandarle al padre lo que se ha escrito
-
-            // *** Llamando al useStates del padre ********************
-            //onNewCategory(categories => [inputValue, ...categories]);
-            // ********************************************************
-
             onNewCategory(value);
             setInputValue('');
         }

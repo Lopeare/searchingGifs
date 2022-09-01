@@ -14,16 +14,14 @@ export const GifExpertApp = () => {
     return (
         <>
             <AddCategory
-                //Llamando al useState desde el hijo
-                //onNewCategory={setCategories}
-                //**********************************
                 onNewCategory={(inputValue) => onAddCategory(inputValue)}
             />
             {
                 categories.map(category => {
-                    return ( //Map con return
+                    return (
                         <GifGrid
-                            key={category} // React es to listo y sabe que este componente pinta un elemento de map
+                            // React request here for the key
+                            key={category}
                             category={category}
                         />
                     )
